@@ -5,7 +5,8 @@ import { Product } from './components/Product';
 import { products } from './data/products';
 import { Row} from 'react-bootstrap';
 import { useProduct } from './hooks/fetchProduct';
-
+import { Modal } from './components/Modal';
+import { CreateProduct } from './components/CreateProduct';
 
 function App() {
 
@@ -18,6 +19,9 @@ const {loading,products,error}=useProduct()
     <Row className='gx-3'>
     {products.map(product=><Product product={product} key={product.id}/>)}
     </Row>
+    <Modal >
+      <CreateProduct title='Product add' />
+    </Modal>
     </Container>
   );
 }
