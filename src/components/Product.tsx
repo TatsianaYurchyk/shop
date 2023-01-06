@@ -41,7 +41,7 @@ export function Product(props: ProductProps) {
         <ListGroup className="list-group-flush ">
           <ListGroup.Item>{props.product.price} $</ListGroup.Item>
           <ListGroup.Item>{props.product.category}</ListGroup.Item>
-          <ListGroup.Item className="rating">{props.product.rating.rate}</ListGroup.Item>
+          <ListGroup.Item className="rating">{props.product?.rating?.rate}</ListGroup.Item>
         </ListGroup>
         <Button className={btnCart} onClick={()=>setInCart(prev=>!prev)}>{inCart? 'In cart': "Add to cart"}</Button>
         

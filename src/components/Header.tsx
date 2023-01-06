@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 
 export function Header (){
     return (
-    <Navbar bg="light" expand="lg" className="mb-3">
+    <Navbar bg="light" expand="lg" className="mb-3 sticky-top">
       <Container>
         <Navbar.Brand href="#home">SHOP Tricky</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

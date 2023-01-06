@@ -33,6 +33,12 @@ code {
   height: auto;
   background-color: floralwhite;
   position: absolute;
-  top: 10%;
-  left:20%;
+  top: 20%;
+  left:25%;
+}
+
+.btnAdd {
+  position: fixed;
+  bottom: 20px;
+  right:8px;
 }
