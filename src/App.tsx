@@ -6,8 +6,10 @@ function App() {
 
   return (
     <Routes>
-      <Route path='/home' element={<ProductPage/>}/>
+      <Route path='/' element={<ProductPage/>}/>
+      <Route path='/shop' element={<ProductPage/>}/>
       <Route path='/adresses' element={<AdressPage/>}/>
+      
     </Routes>
     
   );

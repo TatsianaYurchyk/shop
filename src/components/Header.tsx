@@ -4,20 +4,20 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Container } from "react-bootstrap";
 
-export function Header (){
-    return (
+export function Header() {
+  return (
     <Navbar bg="light" expand="lg" className="mb-3 sticky-top">
-      <Container>
+      <Container className="me-auto position-relative">
         <Navbar.Brand href="#home">SHOP Tricky</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+          <Nav >
+            <Nav.Link href="/shop">Home</Nav.Link>
             <Nav.Link href="/adresses">Our Shops</Nav.Link>
             <NavDropdown title="Positions" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Cloth</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-              Accessoires
+                Accessoires
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Shoes</NavDropdown.Item>
               <NavDropdown.Divider />
@@ -25,9 +25,17 @@ export function Header (){
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
+            <div className="position-absolute top-0 end-0 d-flex">
+            <Nav.Link  ><span className="material-symbols-outlined">
+              shopping_cart
+            </span></Nav.Link>
+            <Nav.Link  ><span className="material-symbols-outlined">
+              account_circle
+            </span></Nav.Link>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    )
+  )
 }
