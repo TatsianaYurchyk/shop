@@ -4,12 +4,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 
 export function Header() {
   return (
     <Navbar bg="light" expand="lg" className="mb-3 sticky-top">
       <Container >
-        {/* <Container className="me-auto position-relative"> */}
         <Navbar.Brand to="/" as={NavLink}>SHOP Tricky</Navbar.Brand>
 
         <Navbar.Collapse id="basic-navbar-nav">
@@ -27,18 +27,25 @@ export function Header() {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-            {/* <div className="position-absolute top-0 end-0 d-flex"> */}
-
-            {/* </div> */}
           </Nav>
         </Navbar.Collapse>
+
         <div className="d-flex burger">
-          <Nav.Link className="icon" ><span className="material-symbols-outlined">
-            shopping_cart
-          </span></Nav.Link>
+     
+          <Nav.Link className="icon position-relative" ><span className="material-symbols-outlined ">
+            shopping_cart 
+          </span>
+          <div className="position-absolute rounded-circle bg-danger d-flex justify-content-center align-items-center count_custom"
+          >5</div>
+           </Nav.Link>
+          
+          
+
           <Nav.Link className="icon" ><span className="material-symbols-outlined">
             account_circle
           </span></Nav.Link>
+          
+          
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </div>
 

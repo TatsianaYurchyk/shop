@@ -3,6 +3,7 @@ import { Header } from "../components/Header";
 import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
+import { Col,Row } from "react-bootstrap";
 
 export function AddressPage (){
 
@@ -16,9 +17,11 @@ export function AddressPage (){
     return (
         <Container>
         <Header/>
-        <div className="d-flex ">
+        <Row md={2} xs={1} lg={4} className="g-3 text-center">
+        {/* <div className="d-flex"> */}
         {shops.map(shop=>(
-            <Card style={{height: 'auto', width:'200px'}} key={shop.id} >
+          <Col>
+            <Card  key={shop.id} >
             <Card.Body>
               <Card.Title>{shop.title}</Card.Title>
               
@@ -30,8 +33,10 @@ export function AddressPage (){
               
             </Card.Body>
           </Card>
+          </Col>
         ))}
-        </div>
+        </Row>
+        {/* </div> */}
        
     </Container>
     )
