@@ -7,6 +7,7 @@ import { IProduct } from "../models";
 
 
 const productData: IProduct = {
+  id:290,
   title:'',
   price:30.3,
   description:"very beautiful",
