@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 
-export function AdressPage (){
+export function AddressPage (){
 
     const shops = [
         {id:1, title: "Wild Hall", city: "NY", address:" Picasso Av. 34", time: "10-22"},

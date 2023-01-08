@@ -42,3 +42,10 @@ code {
   bottom: 20px;
   right:8px;
 }
+
+.burger{
+  align-items: center;
+}
+.icon{
+  margin-right: 8px;
+}
