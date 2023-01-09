@@ -1,5 +1,6 @@
 import { Offcanvas,Stack } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
+import { useProduct } from "../hooks/fetchProduct"
 import { CartItem } from "./CartItem"
 
 interface ShoppingCartProps {
@@ -8,6 +9,7 @@ interface ShoppingCartProps {
 
 export function ShoppingCart ({isOpen}:ShoppingCartProps){
     const {closeCart, cartItems} = useShoppingCart()
+    const {products}=useProduct()
     return <Offcanvas show={isOpen} onHide={closeCart}
  placement="end">
         <Offcanvas.Header closeButton>
@@ -18,6 +20,15 @@ export function ShoppingCart ({isOpen}:ShoppingCartProps){
             {cartItems.map (item => (
                 <CartItem key={item.id} {...item}/>
             ))}
+            <div className="ms-auto fw-bold fs-5">
+                Total: $ {
+                    +(cartItems.reduce((total,cartItem)=> {
+                        const item= products.find(i=> i.id === cartItem.id)
+                        return total + (item?.price ||0) * cartItem.quantity
+                    },0)).toFixed(2)
+                }
+
+            </div>
             </Stack>
         </Offcanvas.Body>
 
