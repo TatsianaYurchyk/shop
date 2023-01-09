@@ -5,8 +5,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { Button } from 'react-bootstrap';
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export function Header() {
+  const {openCart, cartQuantity} = useShoppingCart ()
   return (
     <Navbar bg="light" expand="lg" className="mb-3 sticky-top">
       <Container >
@@ -32,11 +34,11 @@ export function Header() {
 
         <div className="d-flex burger">
      
-          <Nav.Link className="icon position-relative" ><span className="material-symbols-outlined ">
+          <Nav.Link className="icon position-relative" onClick={openCart}><span className="material-symbols-outlined ">
             shopping_cart 
           </span>
-          <div className="position-absolute rounded-circle bg-danger d-flex justify-content-center align-items-center count_custom"
-          >5</div>
+           <div className="position-absolute rounded-circle bg-danger d-flex justify-content-center align-items-center count_custom"
+          > {cartQuantity}</div>
            </Nav.Link>
           
           

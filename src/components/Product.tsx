@@ -20,8 +20,8 @@ export function Product(props: ProductProps) {
   const [inCart,setInCart]=useState(false)
   const btnColour =details? "btn-info":"btn-warning"
   const titleStyle=details? "":"text-truncate"// ...
-  const btnCart=inCart? "btn-light":"btn-dark"
-  const btnClass=['mb-2',btnColour]
+  // const btnCart=inCart? "btn-light":"btn-dark"
+  // const btnClass=['mb-2',btnColour]
   
 
   const {getItemQuantity,increaseItemQuantity,decreaseItemQuantity,removeFromCart} = useShoppingCart()

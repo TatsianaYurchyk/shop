@@ -18,7 +18,6 @@ export function AddressPage (){
         <Container>
         <Header/>
         <Row md={2} xs={1} lg={4} className="g-3 text-center">
-        {/* <div className="d-flex"> */}
         {shops.map(shop=>(
           <Col>
             <Card  key={shop.id} >
@@ -36,7 +35,6 @@ export function AddressPage (){
           </Col>
         ))}
         </Row>
-        {/* </div> */}
        
     </Container>
     )
