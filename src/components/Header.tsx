@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -6,9 +6,12 @@ import { Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useProduct } from "../hooks/fetchProduct";
 
 export function Header() {
+  const {products, filterProducts}=useProduct()
   const {openCart, cartQuantity} = useShoppingCart ()
+  const [category,setCategory] = useState("")
   return (
     <Navbar bg="light" expand="lg" className="mb-3 sticky-top">
       <Container >
@@ -19,11 +22,12 @@ export function Header() {
             <Nav.Link to="/" as={NavLink}>Home</Nav.Link>
             <Nav.Link to="/addresses" as={NavLink}>Our Shops</Nav.Link>
             <NavDropdown title="Positions" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Cloth</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Accessoires
+              <NavDropdown.Item onClick={()=> filterProducts('electronics')}>Electronics</NavDropdown.Item>
+              <NavDropdown.Item onClick={()=> filterProducts(`men's clothing`)}>
+                Men's clothing
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Shoes</NavDropdown.Item>
+              <NavDropdown.Item onClick={()=> filterProducts(`women's clothing`)}>Women's clothing</NavDropdown.Item>
+              <NavDropdown.Item onClick={()=> filterProducts(`jewelery`)}>Jewelery</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
                 Separated link

@@ -17,7 +17,7 @@ interface ProductProps {
 export function Product(props: ProductProps) {
 
   const [details,setDetails]=useState(false)
-  const [inCart,setInCart]=useState(false)
+  // const [inCart,setInCart]=useState(false)
   const btnColour =details? "btn-info":"btn-warning"
   const titleStyle=details? "":"text-truncate"// ...
   // const btnCart=inCart? "btn-light":"btn-dark"
