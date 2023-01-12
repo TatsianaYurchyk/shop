@@ -21,7 +21,7 @@ export function Header() {
           <Nav >
             <Nav.Link to="/" as={NavLink}>Home</Nav.Link>
             <Nav.Link to="/addresses" as={NavLink}>Our Shops</Nav.Link>
-            <NavDropdown title="Positions" id="basic-nav-dropdown">
+            {/* <NavDropdown title="Positions" id="basic-nav-dropdown">
               <NavDropdown.Item onClick={()=> filterProducts('electronics')}>Electronics</NavDropdown.Item>
               <NavDropdown.Item onClick={()=> filterProducts(`men's clothing`)}>
                 Men's clothing
@@ -29,10 +29,10 @@ export function Header() {
               <NavDropdown.Item onClick={()=> filterProducts(`women's clothing`)}>Women's clothing</NavDropdown.Item>
               <NavDropdown.Item onClick={()=> filterProducts(`jewelery`)}>Jewelery</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item onClick={()=> filterProducts(``)}>
+                ALL
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
 

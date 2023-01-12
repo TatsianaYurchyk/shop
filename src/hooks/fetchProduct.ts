@@ -17,11 +17,13 @@ export function useProduct(){
 
     function filterProducts (category: string) {
      
-      setFiltered (products.filter(e=>e.category == category))
-      setisFilterOn(true)
+      // setFiltered (products.filter(e=>e.category == category))
+      setFiltered (products.filter(e=>e.category === 'electronics'))
+      setisFilterOn(prev=>!prev)
+      setProducts(filtered)
      
       // console.log( products.filter(e=>e.category == category))
-      console.log( filtered)
+      console.log( products)
       
     }
   
@@ -51,7 +53,9 @@ export function useProduct(){
 
   useEffect(()=>{
     setProducts(filtered)
+    // console.log(products)
    },[isFilterOn])
+
 
   return {products,filterProducts,error,loading,addProduct}
 }
